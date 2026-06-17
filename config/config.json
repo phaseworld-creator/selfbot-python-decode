@@ -1,0 +1,42 @@
+{
+  "token": "",
+  "prefix": ",",
+  "webhook_url": "",
+  "log_to_file": true,
+  "log_path": "logs/messages.log",
+  "status_rotator": {
+    "enabled": false,
+    "interval": 10,
+    "statuses": [
+      {
+        "text": "\ud83c\udf19 PhaseWorld",
+        "type": "playing"
+      },
+      {
+        "text": "YOU",
+        "type": "listening"
+      }
+    ]
+  },
+  "rich_presence": {
+    "name": "PhaseWorld",
+    "details": "Hello jayden",
+    "state": "",
+    "large_image": "",
+    "large_text": "",
+    "small_image": "",
+    "small_text": "",
+    "enabled": false
+  },
+  "auto_responder": {
+    "enabled": true,
+    "responses": {
+      "hello": "Hey! AFK rn.",
+      ",help": ",help"
+    }
+  },
+  "afk": {
+    "enabled": false,
+    "message": "I'm AFK, back soon."
+  }
+}
